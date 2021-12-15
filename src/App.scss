@@ -1,0 +1,80 @@
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.App-header {
+  background-color: white;
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(15px + 2vmin);
+  color: #1D2060;
+}
+
+.App-main{
+  background-color: white;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .App-main_no-item{
+    width: 50%;
+    margin: 0 auto;
+    font-size: 2.5rem;
+    font-weight: 600;
+    // background-
+    color: rgb(192, 192, 192);
+    padding: 4%;
+    border-radius: 20px;
+    border: 5px dashed rgb(204, 204, 204);
+  }
+}
+
+.App-footer{
+  background-color: #282c34;
+  height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.button{
+  border-radius: 7px;
+  height: 35px;
+  min-width: 80px;
+  margin: 3px;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.15s;
+}
+
+.button-success{
+
+  &:hover{
+    background-color: rgb(25, 134, 67);
+    color: white;
+  }
+}
+
+.button-delete{
+
+  &:hover{
+    background-color: #BF3333;
+    color: white;
+  }
+}
+
+.button-detail{
+
+  &:hover{
+    background-color: #336BBF;
+    color: white;
+  }
+}
