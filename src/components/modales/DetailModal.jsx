@@ -10,7 +10,7 @@ function DetailModal(props) {
 
   const IVA = 0.19;
 
-  const {fetchProducts, item, setItem} = props
+  const {fetchProducts, item, setItem, updateProduct} = props
 
   const [form, setForm] = useState({})
 

@@ -42,6 +42,20 @@ function App() {
     fetchProducts()
   }
 
+  const updateProduct = async (form) => {
+
+    const dataReq = {
+
+    }
+
+    const req = await fetch(`http://localhost:8000/update_product/${form}`, {
+      method: 'UPDATE',
+      headers: { "Content-Type": "application/json" },
+      // body: { "form": id }
+    })
+    fetchProducts()
+  }
+
 
 
 
@@ -80,6 +94,7 @@ function App() {
         fetchProducts={fetchProducts}
         item={item}
         setItem={setItem}
+        updateProduct={updateProduct}
       />
     </div>
   );

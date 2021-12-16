@@ -60,3 +60,16 @@ async def delete_product(id: int) -> dict:
     return {
         "data": f"El producto con id {id} no fue encontrado."
     }
+
+@app.put("/update_product/{id}", tags=["products"])
+async def update_product(id: int, body: dict) -> dict:
+    for product in products:
+        if int(product["id"]) == id:
+            product["item"] = body["item"]
+            return {
+                "data": f"ok."
+            }
+
+    return {
+        "data": f"El producto con id {id} no fue encontrado."
+    }
