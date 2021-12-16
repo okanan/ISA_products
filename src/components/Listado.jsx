@@ -3,28 +3,19 @@ import {useState, useEffect} from 'react'
 import './styles/Listado.scss'
 
 
-function Listado() {
+function Listado({
+  initialState, 
+  fetchProducts, 
+  deleteProduct, 
+  editModal,
+  setEditModal,
+  openDetails 
+}) {
 
-  const [initialState, setInitialState] = useState({
-    loading: false,
-    error: null,
-    data: {},
-    permisos: {}
-  })
 
 
-  const fetchProducts = async () => {
 
-    const req = await fetch('http://localhost:8000/product')
-
-    const res = await req.json()
-
-    setInitialState({...initialState, data: res.data, permisos: res.permisos})
-
-    console.log(res);
-
-  }
-
+ 
   useEffect(() => {
     fetchProducts()
   }, [])
@@ -54,8 +45,21 @@ function Listado() {
                   {prod.descripcion}
                 </div>
                 <div>
-                  {initialState?.permisos?.editar && <button className='button button-detail'>Ver más</button>}
-                  {initialState?.permisos?.eliminar && <button className='button button-delete'>Eliminar</button>}
+                  {initialState?.permisos?.editar && 
+                    <button 
+                      className='button button-detail'
+                      onClick={() => openDetails(prod)}
+                    >
+                      Ver más
+                    </button>
+                  }
+                  {initialState?.permisos?.eliminar && 
+                    <button 
+                      className='button button-delete'
+                      onClick={() => deleteProduct(prod.id ? prod.id : index)}
+                    >
+                      Eliminar
+                    </button>}
                 </div>
               </div>
             )

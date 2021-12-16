@@ -4,7 +4,7 @@
   left: 0;
   bottom: 0;
   right: 0;
-  background-color: rgba(16, 16, 90, 0.548);
+  background-color: rgba(10, 10, 53, 0.705);
 
   display: flex;
   flex-direction: column;
@@ -54,6 +54,26 @@
         background-color: #BF3333;
         color: white;
       }
+    }
+
+    .form-add{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-auto-rows: auto;
+      width: 80%;
+      // background-color: red;
+    }
+
+    .col-2{
+      grid-column-start: 1;
+      grid-column-end: 3;
+      margin: 0 8px 20px ;
+    }
+
+    .col-1{
+      // grid-column-start: 1;
+      // grid-column-end: 3;
+      margin: 0 8px 20px ;
     }
   }
 

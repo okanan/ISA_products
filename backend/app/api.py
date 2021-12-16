@@ -47,3 +47,16 @@ async def add_product(todo: dict) -> dict:
         "estado": "ok" ,
         "mensaje": "Producto agregado." 
     }
+
+@app.delete("/delete_product/{id}", tags=["products"])
+async def delete_product(id: int) -> dict:
+    for product in products:
+        if int(product["id"]) == id:
+            products.remove(product)
+            return {
+                "data": f"El producto con id {id} se ha eliminado."
+            }
+
+    return {
+        "data": f"El producto con id {id} no fue encontrado."
+    }
